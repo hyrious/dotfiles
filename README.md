@@ -37,7 +37,7 @@ I'd like to apply these config by hand instead of automata, so keep reading...
 
 ### tsconfig.json
 
-```json
+```javascript
 {
   "include": ["src"],
   "compilerOptions": {
