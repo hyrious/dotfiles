@@ -23,6 +23,18 @@ I'd like to apply these config by hand instead of automata, so keep reading...
 	proxy = socks5h://localhost:1080
 ```
 
+### .vscode/settings.json
+
+```json
+{
+  "editor.tabSize": 2,
+  "editor.formatOnSave": true,
+  "prettier.tabWidth": 2,
+  "prettier.endOfLine": "auto",
+  "prettier.arrowParens": "avoid"
+}
+```
+
 ### License
 
 CC0.
