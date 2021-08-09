@@ -18,9 +18,9 @@ I'd like to apply these config by hand instead of automata, so keep reading...
 [commit]
     gpgsign = true
 [init]
-	defaultBranch = main
+    defaultBranch = main
 [http "https://github.com"]
-	proxy = socks5h://localhost:1080
+    proxy = socks5h://localhost:1080
 ```
 
 ### .vscode/settings.json
