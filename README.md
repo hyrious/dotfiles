@@ -29,9 +29,13 @@ I'd like to apply these config by hand instead of automata, so keep reading...
 {
   "editor.tabSize": 2,
   "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.addMissingImports": true
+  },
   "prettier.tabWidth": 2,
   "prettier.endOfLine": "auto",
-  "prettier.arrowParens": "avoid"
+  "prettier.arrowParens": "avoid",
+  "prettier.printWidth": 100
 }
 ```
 
@@ -43,14 +47,13 @@ I'd like to apply these config by hand instead of automata, so keep reading...
   "compilerOptions": {
     "strict": true,
     "noFallthroughCasesInSwitch": true,
-    "noImplicitReturns": true,
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitOverride": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
     "forceConsistentCasingInFileNames": true,
-    // TODO: ts4.4 "exactOptionalPropertyTypes": true,
+    "exactOptionalPropertyTypes": true,
     "noEmit": true,
+    // "declaration": true,
+    // "emitDeclarationOnly": true,
     "skipLibCheck": true,
     "moduleResolution": "Node",
     "resolveJsonModule": true,
