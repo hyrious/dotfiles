@@ -1,0 +1,15 @@
+[
+  { "keys": ["super+\\"], "command": "toggle_side_bar" },
+  { "keys": ["option+r"], "command": "reveal_in_side_bar" },
+  {
+    "keys": ["option+z"],
+    "command": "toggle_setting",
+    "args": { "setting": "word_wrap" }
+  },
+  {
+    "keys": ["super+option+t"],
+    "command": "close_others_by_index",
+    "args": { "group": -1, "index": -1 }
+  },
+  { "keys": ["f2"], "command": "lsp_symbol_rename" }
+]

@@ -1,0 +1,42 @@
+[http]
+	postBuffer = 524288000
+[core]
+	pager = less -FXRS
+	pager = delta # ~> https://github.com/dandavison/delta
+	editor = subl -w
+[interactive]
+	diffFilter = delta --color-only
+[add.interactive]
+	useBuiltin = false
+[delta]
+	light = false
+	line-numbers = true
+[merge]
+	conflictstyle = diff3
+[diff]
+	colorMoved = default
+	algorithm = histogram
+[alias]
+	please = push --force-with-lease
+	commend = commit --amend --no-edit
+	it = !git init && git commit -m "root" --allow-empty
+	st = status --short --branch
+	l = !git log --graph --abbrev-commit --decorate --all --format=format:"\"%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(dim white) - %an%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n %C(white)%s%C(reset)\""
+[commit]
+	gpgsign = true
+[man]
+	viewer = catman
+[man "catman"]
+	cmd = man -P \"col -b\"
+[credential]
+	helper = cache --timeout=604800
+[branch]
+	autosetuprebase = always
+[pager]
+	status = true
+[init]
+	defaultBranch = main
+[http "https://github.com"]
+	proxy = socks5h://localhost:1080
+[help]
+	format = html

@@ -1,66 +1,34 @@
 ## Dotfiles
 
-I'd like to apply these config by hand instead of automata, so keep reading...
+<table><tr>
+  <td><a href="./.gitconfig">.gitconfig</a></td>
+  <td><a href="./.vscode/settings.json">.vscode/settings.json</a></td>
+  <td><a href="./.prettierrc">.prettierrc</a></td>
+  <td><a href="./tsconfig.json">tsconfig.json</a></td>
+</tr></table>
 
-### .gitconfig
+<table><tr>
+  <td><a href="./Preferences.sublime-settings">Preferences.sublime-settings</a></td>
+  <td><a href="./Default (OSX).sublime-keymap">Default (OSX).sublime-keymap</a></td>
+</tr></table>
 
-```ini
-[http]
-    postBuffer = 524288000
-[core]
-    editor = subl -w
-[alias]
-    please = push --force-with-lease
-    commend = commit --amend --no-edit
-    it = !git init && git commit -m "root" --allow-empty
-    st = status --short --branch
-    l = !git log --graph --abbrev-commit --decorate --all --format=format:"\"%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(dim white) - %an%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n %C(white)%s%C(reset)\""
-[commit]
-    gpgsign = true
-[init]
-    defaultBranch = main
-[http "https://github.com"]
-    proxy = socks5h://localhost:1080
-```
+### Case - use Prettier
 
-### .vscode/settings.json
+**.vscode/settings.json**
 
 ```json
 {
-  "editor.tabSize": 2,
+  "prettier.enable": true,
   "editor.formatOnSave": true,
-  "editor.codeActionsOnSave": {
-    "source.addMissingImports": true
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+  "svelte.enable-ts-plugin": true,
+  "[svelte]": {
+    "editor.defaultFormatter": "svelte.svelte-vscode"
   },
-  "prettier.tabWidth": 2,
-  "prettier.endOfLine": "auto",
-  "prettier.arrowParens": "avoid",
-  "prettier.printWidth": 100
-}
-```
 
-### tsconfig.json
-
-```javascript
-{
-  "include": ["src"],
-  "compilerOptions": {
-    "strict": true,
-    "noFallthroughCasesInSwitch": true,
-    "noPropertyAccessFromIndexSignature": true,
-    "noImplicitOverride": true,
-    "forceConsistentCasingInFileNames": true,
-    "exactOptionalPropertyTypes": true,
-    "noEmit": true,
-    // "declaration": true,
-    // "emitDeclarationOnly": true,
-    "skipLibCheck": true,
-    "moduleResolution": "Node",
-    "resolveJsonModule": true,
-    "esModuleInterop": true,
-    "lib": ["ESNext"],
-    "target": "ESNext",
-    "module": "ESNext"
+  "[vue]": {
+    "editor.defaultFormatter": "Vue.volar"
   }
 }
 ```
