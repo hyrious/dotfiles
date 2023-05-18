@@ -1,6 +1,10 @@
 ## Dotfiles
 
 <table><tr>
+  <td><a href="./gh-pages.yml">.github/workflow/gh-pages.yml</a></td>
+</tr></table>
+
+<table><tr>
   <td><a href="./.gitconfig">.gitconfig</a></td>
   <td><a href="./.vscode/settings.json">.vscode/settings.json</a></td>
   <td><a href="./.prettierrc">.prettierrc</a></td>
