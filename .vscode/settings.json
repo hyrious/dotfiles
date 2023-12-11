@@ -22,7 +22,7 @@
   "editor.rulers": [
     { "color": "#FFFFFF10", "column": 80 },
     { "color": "#FFFFFF20", "column": 100 },
-    { "color": "#FFFFFF30", "column": 120 },
+    { "color": "#FFFFFF30", "column": 120 }
   ],
   "editor.smoothScrolling": true,
   "editor.tabSize": 2,
@@ -81,10 +81,11 @@
   "workbench.productIconTheme": "icons-carbon",
   "workbench.startupEditor": "none",
   "workbench.tree.indent": 16,
-  
+
   // Extensions
   "extensions.autoUpdate": "onlyEnabledExtensions",
   "extensions.ignoreRecommendations": true,
+  "xo.enable": false,
   "cSpell.enabled": false,
   "cSpell.allowCompoundWords": true,
   "cSpell.language": "en,en-US",
@@ -135,11 +136,10 @@
     "scm": { "authors": true },
     "scmGroupInline": { "stash": true },
     "scmGroup": { "compare": true, "openClose": true, "stash": true },
-    "scmItemInline": { "stash": false },
-    "scmItem": { "clipboard": true, "compare": true, "history": true, "remote": false, "share": false, "stash": true }
+    "scmItemInline": { "stash": false }
   },
   "gitlens.advanced.messages": {
-    "suppressLineUncommittedWarning": true,
+    "suppressLineUncommittedWarning": true
   },
   "gutterpreview.enableReferenceLookup": true,
   "svelte.ask-to-enable-ts-plugin": false,

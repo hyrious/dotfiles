@@ -37,6 +37,16 @@
 }
 ```
 
+### Case - use XO (for working on Sindre Sorhus packages)
+
+```json
+{
+  "xo.format.enable": true,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "samverschueren.linter-xo"
+}
+```
+
 ### License
 
 CC0.
