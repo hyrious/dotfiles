@@ -1,21 +1,9 @@
 [http]
 	postBuffer = 524288000
 [core]
-	pager = less -FXRS
-	pager = delta # ~> https://github.com/dandavison/delta
 	editor = subl -w
-[interactive]
-	diffFilter = delta --color-only
-[add.interactive]
-	useBuiltin = false
-[delta]
-	light = false
-	line-numbers = true
-[merge]
-	conflictstyle = diff3
-[diff]
-	colorMoved = default
-	algorithm = histogram
+	excludesFile = ~/.gitignore
+	pager =
 [alias]
 	please = push --force-with-lease
 	commend = commit --amend --no-edit
@@ -34,6 +22,10 @@
 	autosetuprebase = always
 [pager]
 	status = true
+[pull]
+	rebase = true
+[rebase]
+	autoStash = true
 [init]
 	defaultBranch = main
 [http "https://github.com"]
