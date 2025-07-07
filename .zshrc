@@ -71,7 +71,11 @@ zstyle ':omz:update' mode auto      # update automatically without asking
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+  fnm # completions
+  fzf
   git
+  python
+  zoxide
 )
 
 # https://docs.brew.sh/Shell-Completion
@@ -116,12 +120,32 @@ alias sp="sort-package-json"
 alias el="eza -lA"
 alias df="duf --hide-mp '/dev, *com*, *ystem*'"
 alias sm="smerge ."
+alias nrb="NI_DEFAULT_AGENT=bun nr build"
+alias nrsb="NI_DEFAULT_AGENT=bun nr storybook"
+alias proxy="export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890"
+alias noproxy="export https_proxy= http_proxy= all_proxy="
+alias finalurl="curl -o /dev/null -sILw '%{url_effective}'"
+alias fus="fnm use system"
+alias nmb="npm-mirror"
 
 # bun completions
 [ -s "/Users/hyrious/.bun/_bun" ] && source "/Users/hyrious/.bun/_bun"
 
 # fnm
-eval "$(fnm env --use-on-cd --shell zsh)"
+eval "$(fnm env --shell zsh)"
+# --use-on-cd + rehash, https://github.com/Schniz/fnm/issues/583
+autoload -U add-zsh-hook
+_fnm_autoload_hook () {
+  if [[ -f .node-version || -f .nvmrc || -f package.json ]]; then
+    fnm use --silent-if-unchanged
+    rehash
+  fi
+}
+add-zsh-hook chpwd _fnm_autoload_hook && _fnm_autoload_hook
+
+iterm2_print_user_vars() {
+  iterm2_set_user_var nodeVersion "$(node -v)"
+}
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
@@ -135,12 +159,6 @@ source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 
 # zsh-autosuggestions
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-# zoxide
-eval "$(zoxide init zsh)"
-
-# fzf
-source <(fzf --zsh)
 
 # python
 export PATH="$(brew --prefix python)/libexec/bin:$PATH"
