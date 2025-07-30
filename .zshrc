@@ -76,6 +76,7 @@ plugins=(
   git
   python
   zoxide
+  web-search
 )
 
 # https://docs.brew.sh/Shell-Completion
@@ -127,6 +128,7 @@ alias noproxy="export https_proxy= http_proxy= all_proxy="
 alias finalurl="curl -o /dev/null -sILw '%{url_effective}'"
 alias fus="fnm use system"
 alias nmb="npm-mirror"
+alias nau="NPM_CONFIG_REGISTRY=https://registry.npmjs.org na audit"
 
 # bun completions
 [ -s "/Users/hyrious/.bun/_bun" ] && source "/Users/hyrious/.bun/_bun"

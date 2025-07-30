@@ -6,5 +6,6 @@
   { "keys": ["f2"], "command": "lsp_symbol_rename" },
   { "keys": ["super+k", "super+i"], "command": "lsp_hover" },
   { "keys": ["super+."], "command": "lsp_code_actions" },
-  { "keys": ["super+k", "super+f12"], "command": "lsp_symbol_definition" }
+  { "keys": ["super+k", "super+f12"], "command": "lsp_symbol_definition" },
+  { "keys": ["f8"], "command": "lsp_next_diagnostic" }
 ]

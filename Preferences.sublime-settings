@@ -21,9 +21,11 @@
   "show_rel_path": true,
   "preview_on_click": "only_left",
   "tab_size": 2,
+  "disable_plugin_host_3.3": true,
   "scroll_past_end": true,
   "font_size": 12,
   "dark_color_scheme": "Mariana.sublime-color-scheme",
   "light_color_scheme": "Breakers.sublime-color-scheme",
+  "reload_file_in_background": true,
   "hardware_acceleration": "opengl" // enable this on macOS only
 }
