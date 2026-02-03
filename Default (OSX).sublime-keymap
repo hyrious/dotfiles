@@ -7,5 +7,6 @@
   { "keys": ["super+k", "super+i"], "command": "lsp_hover" },
   { "keys": ["super+."], "command": "lsp_code_actions" },
   { "keys": ["super+k", "super+f12"], "command": "lsp_symbol_definition" },
-  { "keys": ["f8"], "command": "lsp_next_diagnostic" }
+  { "keys": ["f8"], "command": "lsp_next_diagnostic" },
+  { "keys": ["super+c"], "command": "copy_diff", "context": [{ "key": "selector", "operand": "source.diff", "operator": "equal", "match_all": true } ] }
 ]

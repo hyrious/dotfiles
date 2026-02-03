@@ -1,0 +1,115 @@
+[
+  {
+    "key": "ctrl+enter",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus",
+    "args": {
+      "text": "\\\r\n"
+    }
+  },
+  {
+    "key": "shift+enter",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus",
+    "args": {
+      "text": "\\\r\n"
+    }
+  },
+  {
+    "key": "ctrl+`",
+    "command": "workbench.action.closePanel"
+  },
+  {
+    "key": "ctrl+`",
+    "command": "workbench.action.toggleMaximizedPanel",
+    "when": "!terminalFocus"
+  },
+  {
+    "key": "cmd+up",
+    "command": "-cursorTop",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "cmd+down",
+    "command": "-cursorBottom",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "cmd+up",
+    "command": "editor.action.moveLinesUpAction",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "cmd+down",
+    "command": "editor.action.moveLinesDownAction",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "cmd+shift+i",
+    "command": "editor.action.sourceAction",
+    "args": {
+      "kind": "source.addMissingImports",
+      "apply": "first"
+    }
+  },
+  {
+    "key": "alt+r",
+    "command": "workbench.files.action.showActiveFileInExplorer",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "cmd+w",
+    "command": "workbench.action.closeWindow",
+    "when": "!editorIsOpen && !multipleEditorGroups"
+  },
+  {
+    "key": "shift+cmd+a",
+    "command": "git.stageSelectedRanges",
+    "when": "isInDiffEditor"
+  },
+  {
+    "key": "cmd+k alt+cmd+s",
+    "command": "-git.stageSelectedRanges",
+    "when": "isInDiffEditor"
+  },
+  {
+    "key": "shift+cmd+c",
+    "command": "-workbench.action.terminal.openNativeConsole",
+    "when": "!terminalFocus"
+  },
+  {
+    "key": "pageup",
+    "command": "cursorPageUp",
+    "args": {
+      "pageSize": 10
+    },
+    "when": "textInputFocus"
+  },
+  {
+    "key": "pagedown",
+    "command": "cursorPageDown",
+    "args": {
+      "pageSize": 10
+    },
+    "when": "textInputFocus"
+  },
+  {
+    "key": "cmd+k 5",
+    "command": "workbench.action.quickTextSearch"
+  },
+  {
+    "key": "cmd+k",
+    "command": "workbench.action.terminal.clear",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "up",
+    "command": "editor.action.increaseHoverVerbosityLevel",
+    "when": "editorHoverVisible"
+  },
+  {
+    "key": "down",
+    "command": "editor.action.decreaseHoverVerbosityLevel",
+    "when": "editorHoverVisible"
+  }
+]
