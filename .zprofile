@@ -14,13 +14,19 @@ export RUSTC_WRAPPER="sccache"
 # Edit
 export PATH="$HOME/.local/bin:$PATH"
 
+# DotNet
+export DOTNET_ROOT="/opt/homebrew/opt/dotnet/libexec"
+
 # Ruby
 export PATH="/opt/homebrew/opt/ruby/bin:/opt/homebrew/lib/ruby/gems/3.4.0/bin:$PATH"
 export LDFLAGS="-L/opt/homebrew/opt/ruby/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/ruby/include"
 
+# Python
+export PYTHONDONTWRITEBYTECODE=1
+
 # Node.js
-export PATH="/opt/homebrew/opt/node@22/bin:$PATH"
+export PATH="/opt/homebrew/opt/node@24/bin:$PATH"
 
 # Electron
 export ELECTRON_MIRROR="https://npmmirror.com/mirrors/electron/"

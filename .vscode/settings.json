@@ -20,6 +20,9 @@
   "workbench.tree.indent": 10,
   "workbench.tree.enableStickyScroll": false,
   "workbench.secondarySideBar.defaultVisibility": "hidden",
+  "workbench.browser.showInTitleBar": false,
+  "workbench.preferredDarkColorTheme": "Dark Modern",
+  "workbench.preferredLightColorTheme": "Light Modern",
 
   "editor.accessibilitySupport": "off",
   "editor.cursorBlinking": "smooth",
@@ -67,11 +70,11 @@
   "scm.diffDecorationsGutterWidth": 2,
   "extensions.autoUpdate": "onlyEnabledExtensions",
   "extensions.ignoreRecommendations": true,
-  "chat.commandCenter.enabled": false,
   "chat.mcp.gallery.enabled": true,
   "chat.editing.confirmEditRequestRemoval": false,
-  "chat.viewSessions.enabled": false,
   "chat.agent.maxRequests": 250,
+  "chat.agentSessionProjection.enabled": true,
+  "chat.viewSessions.orientation": "stacked",
 
   // Builtin Extensions
   "git.autofetch": true,
@@ -83,9 +86,9 @@
   "git.branchProtectionPrompt": "alwaysCommitToNewBranch",
   "git.branchRandomName.enable": true,
   "debug.javascript.codelens.npmScripts": "never",
-  "typescript.preferences.quoteStyle": "single",
-  "typescript.disableAutomaticTypeAcquisition": true,
-  "typescript.updateImportsOnFileMove.enabled": "always",
+  "js/ts.preferences.quoteStyle": "single",
+  "js/ts.tsserver.automaticTypeAcquisition.enabled": false,
+  "js/ts.updateImportsOnFileMove.enabled": "always",
   "[typescript]": {
     "editor.defaultFormatter": "vscode.typescript-language-features",
     "editor.formatOnSave": true
@@ -114,12 +117,18 @@
   "githubPullRequests.fileListLayout": "flat",
   "githubPullRequests.codingAgent.codeLens": false,
   "github.copilot.nextEditSuggestions.enabled": true,
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": true,
+    "scminput": false
+  },
 
   // File Nesting, make sure it is the last one
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.expand": false,
   "explorer.fileNesting.patterns": {
-    "//": "Last update at 2026/2/2 09:08:51",
+    "//": "Last update at 2026/3/30 09:42:35",
     ".agent": ".agent, .claude, .cline, .codebuddy, .codex, .commandcode, .continue, .crush, .cursor, .factory, .gemini, .goose, .junie, .kilocode, .kiro, .kode, .mcpjam, .mux, .neovate, .opencode, .openhands, .pi, .pochi, .qoder, .qwen, .roo, .trae, .windsurf, .zencoder",
     ".clang-tidy": ".clang-format, .clangd, compile_commands.json",
     ".env": "*.env, .env.*, .envrc, env.d.ts",

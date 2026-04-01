@@ -132,6 +132,7 @@ alias nmb="npm-mirror"
 alias nau="NPM_CONFIG_REGISTRY=https://registry.npmjs.org na audit"
 
 nb() { open "https://hyrious.me/npm-browser/?q=$1" }
+unpkg() { open "https://unpkg.shop.jd.com/$1" }
 
 # bun completions
 [ -s "/Users/hyrious/.bun/_bun" ] && source "/Users/hyrious/.bun/_bun"
