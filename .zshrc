@@ -72,15 +72,13 @@ zstyle ':omz:update' mode auto      # update automatically without asking
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   fnm # completions
-  fzf
   git
   python
   zoxide
-  web-search
 )
 
 # https://docs.brew.sh/Shell-Completion
-FPATH="$(brew --prefix)/share/zsh/site-functions:$FPATH"
+FPATH="/opt/homebrew/share/zsh/site-functions:$FPATH"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -138,6 +136,7 @@ unpkg() { open "https://unpkg.shop.jd.com/$1" }
 [ -s "/Users/hyrious/.bun/_bun" ] && source "/Users/hyrious/.bun/_bun"
 
 # fnm
+path=(${path:#$HOME/.local/state/fnm_multishells/*/bin})
 eval "$(fnm env --shell zsh)"
 # --use-on-cd + rehash, https://github.com/Schniz/fnm/issues/583
 autoload -U add-zsh-hook
@@ -161,10 +160,10 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH="$HOME/.moon/bin:$PATH"
 
 # zsh-syntax-highlighting
-source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # zsh-autosuggestions
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # python
-export PATH="$(brew --prefix python)/libexec/bin:$PATH"
+export PATH="/opt/homebrew/opt/python@3.14/libexec/bin:$PATH"
