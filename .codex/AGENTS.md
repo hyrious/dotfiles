@@ -5,9 +5,12 @@
 
 - Use http proxy 7890 if a curl command fails or takes a long time.
 
+- Do not automatically use `agent-browser`, ask the user for visual checks.
+
 ## Code Style
 
-- Use plain english and sentence style (with `.` at the end) in comments.
+- Use plain english and sentence style in comments.
+  Use [ap-style-title-case](https://github.com/words/ap-style-title-case) in titles.
   If the project rules says using other languages, follow that rules.
 
   ```ts
@@ -135,4 +138,35 @@
   function parse(data: unknown) {
     let query = toPlainObject(data)?.query
   }
+  ```
+
+- Prefer class over closure for satisfying an interface, unless in React Hooks.
+
+  ```ts
+  interface Action { readonly name: string, run(): void }
+  // Bad.
+  function copyAction(): Action {
+    return { name: 'copy', run() { } }
+  }
+  // Good.
+  class CopyAction implements Action {
+    readonly name: string = 'copy'
+    public run(): void { }
+  }
+  ```
+
+- Prefer organize codes by modules, layers, platforms. Avoid barrier files.
+
+  ```js
+  // Bad.
+  interface.ts
+  constants.ts
+  someFunction.ts
+  someClass.ts
+  index.ts
+  // Good.
+  base/common/lifecycle.ts // Business-agnostic modules.
+  service-file/common/fileService.ts // Common/abstract code.
+  service-file/node/nodeFileService.ts // Platform related code.
+  service-file/browser/webFileService.ts
   ```
