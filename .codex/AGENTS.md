@@ -7,6 +7,8 @@
 
 - Do not automatically use `agent-browser`, ask the user for visual checks.
 
+- When the user speaks other languages, apply the same language to skill outputs.
+
 ## Code Style
 
 - Use plain english and sentence style in comments.
@@ -48,6 +50,27 @@
     if (query == 'whosyourdaddy') return secret; // Obviously same type.
   }
   if (typeof VERSION == 'string') {} // `typeof` always returns string.
+  ```
+
+- Prefer `else` clause over early return for exhausting all conditions, unless one-liners.
+
+  ```ts
+  // Bad.
+  if (this.block) {
+    doSomething(this.block)
+    return this.block
+  }
+  const block = new Block()
+  this.block = block
+  return block
+  // Good.
+  if (this.block) {
+    doSomething(this.block)
+    return this.block
+  } else {
+    this.block = new Block()
+    return this.block
+  }
   ```
 
 - Prefer not using `as const` or `satisfies` for TypeScript performance.
@@ -166,7 +189,7 @@
   index.ts
   // Good.
   base/common/lifecycle.ts // Business-agnostic modules.
-  service-file/common/fileService.ts // Common/abstract code.
-  service-file/node/nodeFileService.ts // Platform related code.
-  service-file/browser/webFileService.ts
+  file/common/fileService.ts // Common/abstract code.
+  file/node/nodeFileService.ts // Platform related code.
+  file/browser/webFileService.ts
   ```
