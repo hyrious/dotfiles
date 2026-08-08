@@ -8,7 +8,10 @@
 - Do not automatically use `agent-browser`, ask the user for visual checks.
 
 - When the user speaks other languages, apply the same language to skill outputs.
+  For example in responding the review tasks.
+
+- Keep your design and plan simple and minimal.
 
 ## Code Style
 
-- [TypeScript](./typescript.md)
+- [TypeScript](~/.codex/typescript.md)

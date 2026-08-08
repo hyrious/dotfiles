@@ -41,22 +41,14 @@
   if (typeof VERSION == 'string') {} // `typeof` always returns string.
   ```
 
-- Prefer `else` clause over early return for exhausting all conditions, unless one-liners.
+- Prefer non-negated range check and match the hot path first, unless in trivial one-liners.
 
   ```ts
-  // Bad.
-  if (cond) {
-    return null;
-  }
-  return object;
+  // Bad. NaN slips through.
+  if (a < 0 || a >= 10) return;
   // Good.
-  if (guard) return null;
-  return object;
-  // Good.
-  if (cond) {
-    return null;
-  } else {
-    return object;
+  if (0 <= a && a < 10) {
+    return a % 2 == 0 ? a / 2 : a * 3;
   }
   ```
 
@@ -126,13 +118,12 @@
 
   ```ts
   // Bad.
-  function capitalize(s: string) {
-    if (typeof s != 'string') throw new TypeError();
-    return s[0].toUpperCase() + s.slice(1);
+  if (typeof process == 'object' && typeof process.version == 'string') {
+    return process.version.match(/^v([\d+.]+)/)?.[1];
   }
-  // Good.
-  function capitalize(s: string) {
-    return s[0].toUpperCase() + s.slice(1);
+  // Good. We know that variable is 99.9% the right type and value.
+  if (globalThis.process) {
+    return process.versions.node;
   }
   ```
 
@@ -151,6 +142,7 @@
   ```
 
 - Prefer class over closure for satisfying an interface, unless in React Hooks.
+  Prefer `private field` over `#field`.
 
   ```ts
   interface Action { readonly name: string, run(): void }
