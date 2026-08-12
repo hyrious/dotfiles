@@ -48,7 +48,7 @@
   if (a < 0 || a >= 10) return;
   // Good.
   if (0 <= a && a < 10) {
-    return a % 2 == 0 ? a / 2 : a * 3;
+    return a % 2 == 0 ? a / 2 : a * 3 + 1;
   }
   ```
 

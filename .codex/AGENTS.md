@@ -10,8 +10,9 @@
 - When the user speaks other languages, apply the same language to skill outputs.
   For example in responding the review tasks.
 
-- Keep your design and plan simple and minimal.
+- Keep your design and plan simple and minimal. Prefer "not worth doing" over adding complexity.
+  Avoid metadata clutter, and do not use the middle dot (·) as a visual separator.
 
 ## Code Style
 
-- [TypeScript](~/.codex/typescript.md)
+- Apply [TypeScript style guide](~/.codex/typescript.md) before writing or patching any .ts files.
