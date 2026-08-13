@@ -96,7 +96,7 @@ PROMPT+=' $(git_prompt_info)'
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
 else
-  export EDITOR='subl'
+  export EDITOR='subl -w'
 fi
 
 # Compilation flags
