@@ -31,7 +31,7 @@
   function parse(blocks: readonly Block[])
   ```
 
-- Prefer `==` for `null` and obvious same-type compares, otherwise `===`.
+- Prefer `==` for `null`/`undefined` and obvious same-type compares, otherwise `===`.
 
   ```ts
   function search(query: string | null) {
@@ -158,6 +158,7 @@
   ```
 
 - Prefer organize codes by modules, layers, platforms. Avoid barrier files.
+  Reference: https://github.com/microsoft/vscode/wiki/Source-Code-Organization
 
   ```js
   // Bad.
