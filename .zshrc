@@ -132,6 +132,18 @@ alias nau="NPM_CONFIG_REGISTRY=https://registry.npmjs.org na audit"
 nb() { open "https://hyrious.me/npm-browser/?q=$1" }
 unpkg() { open "https://unpkg.shop.jd.com/$1" }
 
+# nr completions
+_nr() {
+  local -a replies
+  replies=("${(@f)$(
+    COMP_CWORD=$((CURRENT - 1)) \
+    COMP_LINE=${words[CURRENT]} \
+    command nr --completion "${words[@]}" 2>/dev/null
+  )}")
+  compadd -- "${replies[@]}"
+}
+compdef _nr nr
+
 # bun completions
 [ -s "/Users/hyrious/.bun/_bun" ] && source "/Users/hyrious/.bun/_bun"
 
@@ -152,18 +164,8 @@ iterm2_print_user_vars() {
   iterm2_set_user_var nodeVersion "$(node -v)"
 }
 
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-
-# moonbit
-export PATH="$HOME/.moon/bin:$PATH"
-
 # zsh-syntax-highlighting
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # zsh-autosuggestions
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-# python
-export PATH="/opt/homebrew/opt/python@3.14/libexec/bin:$PATH"

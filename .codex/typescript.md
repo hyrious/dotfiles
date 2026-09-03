@@ -9,7 +9,7 @@
   ```
 
 - Prefer consistent visual style when editing or adding similar code.
-  If the project configures a formatter like pretter or oxfmt, follow that config.
+  If the project configures a formatter like oxfmt, follow that config.
 
   ```ts
   export async function get<R>(path: string, init?: Options): Promise<R> {}
@@ -51,6 +51,8 @@
     return a % 2 == 0 ? a / 2 : a * 3 + 1;
   }
   ```
+
+- Prefer relaxed shape than strict type for API accepting user inputs and responses.
 
 - Prefer not using `as const` or `satisfies` for TypeScript performance.
 
