@@ -175,3 +175,10 @@
   file/node/nodeFileService.ts // Platform related code.
   file/browser/webFileService.ts
   ```
+
+## Refactoring
+
+- Look for nearby codes and files to learn the pattern.
+
+- Apply ablation study after all changes done.
+  Find, simplify or delete redundant codes.

@@ -9,13 +9,18 @@
   For example in responding the review tasks.
 
 - Keep your design and plan simple and minimal. Prefer "not worth doing" over adding complexity.
-  Apply ablation study if needed.
+  Do not over-engineer or over-defense, ask the user for decision or help. Apply ablation study if needed.
 
 - Use conventional commits message style.
 
 ## Code Style
 
 - Apply [TypeScript style guide](~/.codex/typescript.md) before writing or patching any .ts files.
+
+## Writing Style
+
+- Prefer concise academic writing style, prefer inline math and code span for short pieces.
+  Apply "copywriting" if needed.
 
 ## Shell Commands Hints
 
