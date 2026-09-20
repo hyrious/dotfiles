@@ -52,7 +52,24 @@
   }
   ```
 
-- Prefer relaxed shape than strict type for API accepting user inputs and responses.
+- Prefer relaxed shapes at input boundaries.
+  Validate or normalize them into strong internal invariants before use.
+
+  ```ts
+  // Input may be incomplete.
+  interface DocumentInput { content?: string }
+  // Internal state has been validated or deliberately normalized.
+  interface LoadedDocument { content: string }
+  ```
+
+- Prefer strong invariants over adding silent fallbacks.
+
+  ```ts
+  // Bad.
+  const userName = session.user?.name ?? 'Unknown'
+  // Good.
+  const userName = session.user.name
+  ```
 
 - Prefer not using `as const` or `satisfies` for TypeScript performance.
 
@@ -75,6 +92,7 @@
   ```
 
 - Prefer leaving `undefined` fields over the `...` trick for runtime optimizations.
+  This is very common in AI generated codes, try fixing nearby codes directly.
   Reference: https://mrale.ph/blog/2015/01/11/whats-up-with-monomorphism.html
 
   ```ts
@@ -181,4 +199,5 @@
 - Look for nearby codes and files to learn the pattern.
 
 - Apply ablation study after all changes done.
-  Find, simplify or delete redundant codes.
+  Find, simplify or delete redundant codes and tests.
+  Update directly dependent code when required for correctness.

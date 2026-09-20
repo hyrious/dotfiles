@@ -38,13 +38,21 @@ export PATH="$HOME/.moon/bin:$PATH"
 
 # Electron
 export ELECTRON_MIRROR="https://npmmirror.com/mirrors/electron/"
-# export ELECTRON_SKIP_BINARY_DOWNLOAD=1
+export ELECTRON_SKIP_BINARY_DOWNLOAD=1
 
 export COREPACK_NPM_REGISTRY="https://registry.npmmirror.com"
 export COREPACK_ENABLE_AUTO_PIN=0
 export COREPACK_INTEGRITY_KEYS=0
 
 export FNM_NODE_DIST_MIRROR=https://npmmirror.com/mirrors/node
+
+# pnpm
+export PNPM_HOME="/Users/hyrious/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME/bin:"*) ;;
+  *) export PATH="$PNPM_HOME/bin:$PATH" ;;
+esac
+# pnpm end
 
 # Added by OrbStack: command-line tools and integration
 source ~/.orbstack/shell/init.zsh 2>/dev/null || :
