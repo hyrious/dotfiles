@@ -5,6 +5,9 @@
 
 - Do not automatically use `agent-browser`, ask the user for visual checks.
 
+- Do not use `request_user_input_async`. When user input is needed,
+  ask the question and end the turn. Wait for the user's reply before continuing.
+
 - When the user speaks other languages, reply in the same language.
   For example in responding the review tasks.
 
