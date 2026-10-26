@@ -8,6 +8,8 @@
 
 - Do not use `request_user_input_async`, wait for the user's reply before continuing.
 
+- Do not use `imagegen` on tasks do-able through local tools like `magick`, `sharp` etc.
+
 - Speak in the same language as the user speaks.
 
 - Follow the nearby code style, prefer "not worth doing" over adding complexity.
@@ -17,6 +19,7 @@
 ## Code Style
 
 - Apply [TypeScript style guide](~/.codex/typescript.md) for any .ts files.
+- Read [Configuration guide](~/.codex/configuration.md) before adding any config (env, flag, toggle, setting).
 
 ## Shell Commands
 

@@ -40,6 +40,7 @@
   Prefer `private field` over `#field`.
   Prefer `==` for `null`/`undefined` and obvious same-type compares.
   Prefer non-negated `if` statements for readability.
+  Prefer reasonable fields order.
 
   ```ts
   // Bad.
@@ -52,7 +53,8 @@
 
 ## Refactoring
 
-- Look for nearby codes and files to learn the pattern.
+- Look for nearby codes and files to reuse the pattern.
+  Ask the user before adding a new convention.
 
 - Apply ablation study after all changes done.
   Find, simplify or delete redundant codes and tests.
